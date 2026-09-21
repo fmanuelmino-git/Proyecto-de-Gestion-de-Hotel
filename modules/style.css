@@ -1,0 +1,164 @@
+body {
+    background: #f4f4f4;
+    background-color: #333333;
+    /* max-width: 600px; 
+    margin-left: auto;
+    margin-right: auto; */
+    text-decoration: none;
+		
+}
+
+a:link {
+    text-decoration: none;
+}
+
+a:visited {
+    text-decoration: none;
+}
+
+h2 {
+    text-decoration: none;
+}
+
+h1, h2 {
+    /*text-align: center;*/
+}
+
+h4 {
+    /*text-align: center;*/
+    text-decoration: none;
+}
+
+
+.sidenav {
+    width: 130px;
+    position: fixed;
+    z-index: 1;
+    top: 20px;
+    left: 10px;
+    background: #eee;
+    overflow-x: hidden;
+    padding: 8px 0;
+    background-color: #000000
+}
+
+.sidenav a {
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    /*font-size: 25px; */
+    color: #fff;
+    display: block;
+}
+
+.sidenav a:hover {
+    background-color: #fb2352;
+}
+
+.main {
+    /*font-size: 28px; /* Increased text to enable scrolling */
+    padding: 0px 10px;
+    color: white;
+}
+
+
+/* Add a black background color to the top navigation */
+.topnav {
+    background-color: #008f39;
+    overflow: hidden;
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 7px 8px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+    background-color: #0b6730;
+    color: black;
+}
+
+/* Add a color to the active/current link */
+.topnav a.active {
+    background-color: #008f39;
+    color: white;
+    font-weight: bold;
+}
+
+.title {
+   /* background-color: #f4f4f4;*/
+    color: white;
+}
+
+.register {
+    text-align:center;
+  }
+  
+.footer {
+    color: white;
+	   
+}
+
+input {
+  width: 25%;
+}
+
+
+td {
+    text-align: center;
+}
+
+table {
+    width: 50%;
+    background-color: #f2f2f2;
+    border-collapse: collapse;
+}
+
+th {
+  background-color: #04AA6D;
+  color: white;
+}
+
+
+@font-face {
+    font-family: 'Terminus'; /* A name you choose for the font */
+    src: url('./font/TerminusTTF-4.49.3.ttf') format('ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+@font-face {
+    font-family: 'Terminus-Bold'; /* A name you choose for the font */
+    src: url('./font/TerminusTTF-Bold-4.49.3.ttf') format('ttf');
+    font-weight: normal;
+    font-style: bold;
+}
+
+@font-face {
+    font-family: 'Terminus-Italic'; /* A name you choose for the font */
+    src: url('./font/TerminusTTF-Italic-4.49.3.ttf') format('ttf');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Terminus-Italic-Bold'; /* A name you choose for the font */
+    src: url('./font/TerminusTTF-Bold-Italic-4.49.3.ttf') format('ttf');
+    font-weight: normal;
+    font-style: italic bold;
+}
+
+
+
+
+@media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    /*.sidenav a {font-size: 18px;}
+}
+
