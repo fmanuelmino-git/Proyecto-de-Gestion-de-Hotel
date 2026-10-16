@@ -22,7 +22,8 @@ creacion_tabla_usuario = """
         contrasena VARCHAR(255) NOT NULL,
         email VARCHAR(25) NOT NULL,
         estado VARCHAR(45),
-        rol_idrol INT
+        rol_idrol INT,
+        persona_id_persona INT
     );
 """
 
@@ -42,8 +43,9 @@ creacion_tabla_reserva = """
         fecha_reserva DATE,
         fecha_ingreso DATE,
         fecha_salida DATE,
-        estado_reserva TEXT NOT NULL CHECK (estado_reserva IN ('Activo', 'Inactivo', 'Pendiente')),
-        cliente_id_cliente INT
+        estado_reserva TEXT NOT NULL CHECK (estado_reserva IN ('Activo', 'Inactivo', 'Pendiente', 'Terminado')),
+        cliente_id_cliente INT,
+        reserva_id_reserva INT
     );
 """
 
@@ -55,8 +57,19 @@ creacion_tabla_habitacion = """
         tipo VARCHAR(45),
         capacidad VARCHAR(45),
         precio_noche DECIMAL(10,2),
-        estado_habitacion TEXT NOT NULL CHECK (estado_habitacion IN ('Libre', 'Ocupado', 'Requiere Mantenimiento')),
-        reserva_id_reserva INT
+        estado_habitacion TEXT NOT NULL CHECK (estado_habitacion IN ('Libre', 'Ocupado', 'Requiere Mantenimiento'))
+    );
+"""
+
+# Creacion tabla Cliente
+creacion_tabla_persona = """
+    CREATE TABLE persona (
+        id_persona INTEGER PRIMARY KEY AUTOINCREMENT,
+        nombre_apellido VARCHAR(255) NOT NULL,
+        dni VARCHAR(10) NOT NULL,
+        telefono VARCHAR(45),
+        correo VARCHAR(45),
+        direccion VARCHAR(45)
     );
 """
 
@@ -64,11 +77,7 @@ creacion_tabla_habitacion = """
 creacion_tabla_cliente = """
     CREATE TABLE CLIENTE (
         id_cliente INTEGER PRIMARY KEY AUTOINCREMENT,
-        nombre_apellido VARCHAR(255) NOT NULL,
-        dni VARCHAR(10) NOT NULL,
-        telefono VARCHAR(45),
-        correo VARCHAR(45),
-        direccion VARCHAR(45)
+        persona_id_persona INT
     );
 """
 
@@ -96,19 +105,6 @@ creacion_tabla_servicio = """
     );
 """
 
-# Insert en la tabla Usuario
-
-insert_tabla_usuario = """
-    INSERT INTO USUARIO
-VALUES ('1', 'admin', 'admin', 'admin@admin', 'activo', 1);
-"""
-
-# Insert en la tabla Rol
-insert_tabla_rol = """
-    INSERT INTO ROL (id_rol, nombre_rol, descripcion) VALUES
-(1, 'admin', 'permisos de administrador'),
-(2, 'usuario', 'permisos de usuario comun');
-"""
 
 # Execute the table creation query
 cursor.execute(creacion_tabla_usuario)

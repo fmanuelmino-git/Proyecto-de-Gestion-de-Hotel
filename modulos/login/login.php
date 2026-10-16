@@ -9,7 +9,7 @@ if (!$db) {
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $nombre_usuario = $_POST['nombre_usuario'];
-    $contrasena = md5($_POST['contrasena']);
+    $contrasena = $_POST['contrasena'];
 
     $sql = "SELECT * FROM USUARIO WHERE nombre_usuario = :usuario AND contrasena = :clave";
     $stmt = $db->prepare($sql);
@@ -30,7 +30,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             }
         }
         
-        header("Location: ../../index.php");
+        header("Location: ../admin/index.php");
         exit();
         
     } else {
@@ -68,7 +68,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 <footer>
 <div class="footer" align="center">
-<h5>¿Aun no tiene una cuenta? <a href="register.php">Crear Cuenta.</a></h5>
 <h5>Cambiar contraseña (requiere estar con sesion iniciada) <a href="cambio.php">Cambiar contraseña.</a></h5>
 </div>
 </footer>

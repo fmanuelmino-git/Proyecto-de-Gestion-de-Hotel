@@ -4,13 +4,12 @@ body {
     /* max-width: 600px; 
     margin-left: auto;
     margin-right: auto; */
-    text-decoration: none;
-    font-family: "Batang"
-		
+    text-decoration: none;		
 }
 
 a:link {
     text-decoration: none;
+    color: #90EE90;
 }
 
 a:visited {
@@ -21,9 +20,6 @@ h2 {
     text-decoration: none;
 }
 
-h1, h2 {
-    /*text-align: center;*/
-}
 
 h4 {
     /*text-align: center;*/
@@ -55,11 +51,7 @@ h4 {
     background-color: #04AA6D;
 }
 
-.main {
-    margin-left: 140px; /* Same width as the sidebar + left position in px */
-    /*font-size: 28px; /* Increased text to enable scrolling */
-    padding: 0px 10px;
-}
+
 
 /* Add a black background color to the top navigation */
 .topnav {
@@ -123,14 +115,9 @@ th {
 }
 
 
-@font-face {
-    font-family: 'BATANG'; /* A name you choose for the font */
-    src: url('fonts/BATANG.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-	  }
+
+
 @media screen and (max-height: 450px) {
     .sidenav {padding-top: 15px;}
-    /*.sidenav a {font-size: 18px;}
+    /*.sidenav a {font-size: 18px;}*/
 }
-

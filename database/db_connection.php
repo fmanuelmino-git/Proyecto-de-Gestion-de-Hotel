@@ -1,0 +1,6 @@
+  <?php	
+$db = new SQLite3('hotel.db', SQLITE3_OPEN_READWRITE);
+$db->enableExceptions(true);
+$db->busyTimeout(5000);
+$db->exec('PRAGMA journal_mode = WAL');
+	  ?>
