@@ -11,6 +11,7 @@ cursor.execute("DROP TABLE IF EXISTS ROL")
 cursor.execute("DROP TABLE IF EXISTS RESERVA")
 cursor.execute("DROP TABLE IF EXISTS HABITACION")
 cursor.execute("DROP TABLE IF EXISTS CLIENTE")
+cursor.execute("DROP TABLE IF EXISTS PERSONA")
 cursor.execute("DROP TABLE IF EXISTS FACTURA")
 cursor.execute("DROP TABLE IF EXISTS SERVICIO")
 
@@ -45,7 +46,7 @@ creacion_tabla_reserva = """
         fecha_salida DATE,
         estado_reserva TEXT NOT NULL CHECK (estado_reserva IN ('Activo', 'Inactivo', 'Pendiente', 'Terminado')),
         cliente_id_cliente INT,
-        reserva_id_reserva INT
+        habitacion_id_habitacion INT
     );
 """
 
@@ -61,14 +62,13 @@ creacion_tabla_habitacion = """
     );
 """
 
-# Creacion tabla Cliente
+# Creacion tabla Persona
 creacion_tabla_persona = """
-    CREATE TABLE persona (
+    CREATE TABLE PERSONA (
         id_persona INTEGER PRIMARY KEY AUTOINCREMENT,
         nombre_apellido VARCHAR(255) NOT NULL,
         dni VARCHAR(10) NOT NULL,
         telefono VARCHAR(45),
-        correo VARCHAR(45),
         direccion VARCHAR(45)
     );
 """
@@ -115,16 +115,14 @@ cursor.execute(creacion_tabla_reserva)
 print("La tabla Reserva esta lista")
 cursor.execute(creacion_tabla_cliente)
 print("La tabla Cliente esta lista")
+cursor.execute(creacion_tabla_persona)
+print("La tabla Persona esta lista")
 cursor.execute(creacion_tabla_factura)
 print("La tabla Factura esta lista")
 cursor.execute(creacion_tabla_servicio)
 print("La tabla Servicio esta lista")
 cursor.execute(creacion_tabla_habitacion)
 print("La tabla Habitacion esta lista")
-cursor.execute(insert_tabla_usuario)
-print("La tabla Usuario ahora esta cargada")
-cursor.execute(insert_tabla_rol)
-print("La tabla Rol ahora esta cargada")
 
 # Confirm that the table has been created
 print("Las tablas estan listas")

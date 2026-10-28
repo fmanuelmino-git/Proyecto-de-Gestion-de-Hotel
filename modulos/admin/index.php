@@ -23,8 +23,8 @@ if (!$db) {
 	<a href="modulos/reportes/reporte.php">Reportes</a>
 	<a href="modulos/busqueda/busqueda.php">Busqueda</a>
 	<?php if (isset($_SESSION['logged-in']) && $_SESSION['logged-in'] === true): ?>
-	<a href="../modules/login/register.php">Creacion de Cuentas</a>
-	<a href="../modules/admin/account-admin.php">Administracion de Cuentas</a>	
+	<a href="../login/creacion-cuentas.php">Creacion de Cuentas</a>
+	<a href="../modu/admin/account-admin.php">Administracion de Cuentas</a>	
 	<a href="modules/login/logout.php">Cerrar sesion</a>
 	<?php endif; ?>
 </div> 
@@ -35,7 +35,7 @@ if (!$db) {
 
 <div class="main">
     <?php
-      $registros = $db->query("SELECT h.numero, h.tipo, h.capacidad, h.estado_habitacion, r.fecha_salida, c.nombre_apellido FROM HABITACION as h LEFT OUTER JOIN RESERVA as r ON h.reserva_id_reserva = r.id_reserva LEFT OUTER JOIN CLIENTE as c ON r.cliente_id_cliente = c.id_cliente;") or
+      $registros = $db->query("SELECT h.numero, h.tipo, h.capacidad, h.estado_habitacion, r.fecha_salida, p.nombre_apellido FROM HABITACION as h LEFT OUTER JOIN RESERVA as r ON h.id_habitacion = r.habitacion_id_habitacion LEFT OUTER JOIN CLIENTE as c ON r.cliente_id_cliente = c.id_cliente LEFT OUTER JOIN PERSONA as p on c.persona_id_persona = p.id_persona;") or
     die($DB->error);
 ?>
 		<p>.</p>
